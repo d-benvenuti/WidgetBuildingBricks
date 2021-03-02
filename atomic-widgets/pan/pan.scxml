@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml 
+	datamodel="ecmascript"
+    initial="rest"
+    name="slider"
+    version="1.0"
+    xmlns:dbvis="dbvis"
+    xmlns="http://www.w3.org/2005/07/scxml">
+	
+	<datamodel>
+		<data id="pan-position" expr="0"/>
+	</datamodel>
+	
+	<state id="pre">
+		<transition event="dragstart" target="panning" />
+	</state>
+	
+	<state id="panning">
+		<onentry>
+			<assign location="pan-position" expr="_event.data[0]"/>
+		</onentry>
+		<transition event="mousemove" target="panning" />
+		<transition event="dragend" target="pre" />
+		<transition event="post-e" target="post-s" />
+	</state>
+	
+	<state id="post-s" />
+	
+</scxml>

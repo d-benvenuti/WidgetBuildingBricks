@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml 
+	datamodel="ecmascript"
+    initial="rest"
+    name="slider"
+    version="1.0"
+    xmlns:dbvis="dbvis"
+    xmlns="http://www.w3.org/2005/07/scxml">
+	
+	<datamodel>
+		<data id="zoom-percentage" expr="100"/>
+	</datamodel>
+	
+	<state id="pre">
+		<transition event="zoomin" target="zooming" />
+		<transition event="zoomout" target="zooming" />
+	</state>
+	
+	<state id="zooming">
+		<onentry>
+			<assign location="pan-position" expr="_event.data[0]"/>
+		</onentry>
+		<transition cond="zoom-percentage==100" target="pre" />
+		<transition event="zoomin" target="zooming" />
+		<transition event="zoomout" target="zooming" />
+		<transition event="post-e" target="post-s" />
+	</state>
+	
+	<state id="post-s" />
+	
+</scxml>

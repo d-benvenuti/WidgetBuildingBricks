@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml 
+	datamodel="ecmascript"
+    initial="rest"
+    name="slider"
+    version="1.0"
+    xmlns:dbvis="dbvis"
+    xmlns="http://www.w3.org/2005/07/scxml">
+	
+	<datamodel>
+		<data id="element-id" expr="0"/>
+	</datamodel>
+	
+	<state id="pre">
+		<transition event="rclick" target="post1" cond="data-ex==1" />
+		<transition event="rclick" target="post2" cond="data-ex==2" />
+	</state>
+	
+	<state id="post1">
+		<onentry>
+			<assign location="element-id" expr="_event.data[0]"/>
+		</onentry>
+	</state>
+	
+	<state id="post2">
+		<onentry>
+			<assign location="element-id" expr="_event.data[0]"/>
+		</onentry>
+	</state>
+	
+</scxml>
