@@ -3,7 +3,8 @@ Repository containing, for each atomic widget, its FSA and the relative SCXML im
 
 # ToDo
 
-Modify the statecharts' PNG to match with the current scxml implementation.
+-	Modify the statecharts' PNG to match with the current scxml implementation.
+-	Discuss about the example in "examples/to-discuss".
 
 # Useful Information
 
