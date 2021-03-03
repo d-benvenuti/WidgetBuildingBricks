@@ -18,7 +18,7 @@
 	
 	<state id="zooming">
 		<onentry>
-			<assign location="pan-position" expr="_event.data[0]"/>
+			<assign location="zoom-percentage" expr="_event.data[0]"/>
 		</onentry>
 		<transition cond="zoom-percentage==100" target="pre" />
 		<transition event="zoomin" target="zooming" />
